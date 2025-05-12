@@ -1,10 +1,11 @@
 import React from "react";
 import "./Appbar.css";
 
-export default function AppBar() {
+export default function AppBar({ dispatcher }) {
   return (
     <div id="app_bar">
       <h2>Item Tracker</h2>
+
       <div>
         <label for="taken_by">Taken By </label>
         <select id="taken_by" name="taken_by">
@@ -13,6 +14,7 @@ export default function AppBar() {
           <option value="Sofi">Sofi</option>
         </select>
       </div>
+
       <div>
         <label for="status">Status </label>
         <select id="status" name="status">
@@ -20,8 +22,24 @@ export default function AppBar() {
           <option value="Not Returned">Not returned</option>
         </select>
       </div>
+
       <div id="add_item">
-        <button id="add_item_button">Add Item</button>
+        <button
+          onClick={() =>
+            dispatcher({
+              type: "ADD_ENTRY",
+              payload: {
+                date: new Date().toISOString().split("T")[0],
+                taken_by: "Mukesh",
+                description: "Item description goes here.",
+                status: "Not Returned",
+              },
+            })
+          }
+          id="add_item_button"
+        >
+          Add Item
+        </button>
       </div>
     </div>
   );
