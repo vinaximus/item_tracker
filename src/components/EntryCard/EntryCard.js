@@ -1,5 +1,5 @@
 import React from "react";
-//import "./EntryCard.css";
+import "./EntryCard.css";
 
 export default function EntryCard({ item }) {
   // Assign test data to item if not provided

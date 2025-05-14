@@ -1,6 +1,7 @@
 import React from "react";
 import EntryCard from "../EntryCard/EntryCard";
 import "./EntryGrid.css";
+
 export default function EntryGrid({ entries }) {
   //populate entries with test data if not provided
   if (!entries) {
