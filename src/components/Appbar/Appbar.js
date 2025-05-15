@@ -47,6 +47,9 @@ export default function AppBar({ dispatcher }) {
             open={showAddForm}
             handleClose={() => setShowAddForm(false)}
             handleSubmit={(data) => {
+              alert(
+                `${data.date} ${data.takenBy} ${data.description} ${data.status} from appbar.js`
+              );
               dispatcher({ type: "ADD_ENTRY", payload: data });
               setShowAddForm(false);
             }}

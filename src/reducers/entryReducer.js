@@ -1,6 +1,9 @@
 export default function entryReducer(state, action) {
   switch (action.type) {
     case "ADD_ENTRY":
+      alert(
+        `${action.payload.date} ${action.payload.taken_by} ${action.payload.description} ${action.payload.status}`
+      );
       return { ...state, entries: [...state.entries, action.payload] }; // Use state.entries
     case "REMOVE_ENTRY":
       return {

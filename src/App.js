@@ -18,7 +18,10 @@ function App() {
   return (
     <div className="App">
       <AppBar dispatcher={entriesDispatch}></AppBar>
-      <EntryGrid entries={entriesState.entries}></EntryGrid>
+      <EntryGrid
+        entries={entriesState.entries}
+        dispatcher={entriesDispatch}
+      ></EntryGrid>
     </div>
   );
 }

@@ -36,6 +36,7 @@ export default function AddEntryForm({ open, handleClose, handleSubmit }) {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+    alert(`${date} ${takenBy} ${description} ${status}`);
     handleSubmit({ date, takenBy, description, status });
     handleClose();
   };
